@@ -20,8 +20,7 @@ public class ScreenShotSaver {
 			BufferedImage capture = new Robot().createScreenCapture(screenRect);
 			ImageIO.write(capture, "jpg", new File(rootpath+"/"+screenshotNumber(filename)+".jpg"));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-/*mukul*/
+			// TODO Auto-generated catch bl
 			e.printStackTrace();
 		}
 	}
