@@ -152,9 +152,8 @@ public class IconForUser{
 		btnNewFile.setBounds(0, 52, 99, 48);
 		contentPane.add(btnNewFile);
 		frame.setSize(100, 100);
-		//frame.setLocation(Toolkit.getDefaultToolkit()-100, Toolkit.getDefaultToolkit().getWindowSize().height-100);
-		frame.setLocation(0, 0);
-		System.out.println("mukul");
+		frame.setLocation(Toolkit.getDefaultToolkit().getScreenSize().width-100,Toolkit.getDefaultToolkit().getScreenSize().height-150);
+
 		frame.setVisible(true);
 		frame.setAlwaysOnTop(true);
 	}

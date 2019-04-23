@@ -10,20 +10,9 @@ import java.io.InputStream;
 
 import javax.imageio.ImageIO;
 
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.util.IOUtils;
-import org.apache.poi.xwpf.usermodel.Document;
-import org.apache.poi.xwpf.usermodel.XWPFDocument;
-import org.apache.poi.xwpf.usermodel.XWPFParagraph;
-import org.apache.poi.xwpf.usermodel.XWPFRun;
-import org.apache.xmlbeans.XmlException;
-import org.apache.xmlbeans.XmlToken;
-import org.openxmlformats.schemas.drawingml.x2006.main.CTNonVisualDrawingProps;
-import org.openxmlformats.schemas.drawingml.x2006.main.CTPositiveSize2D;
-import org.openxmlformats.schemas.drawingml.x2006.wordprocessingDrawing.CTInline;
 
 public class WordFileGenerator {
-	String rootpath;
+	/*String rootpath;
 	String filename;
 	public WordFileGenerator(String rootpath, String filename){
 		try {
@@ -130,4 +119,4 @@ public class WordFileGenerator {
 		File[] list=file.listFiles();
 		return list.length;
 	}
-}
+*/}
