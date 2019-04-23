@@ -8,6 +8,7 @@ import java.awt.EventQueue;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.Robot;
+import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -151,7 +152,9 @@ public class IconForUser{
 		btnNewFile.setBounds(0, 52, 99, 48);
 		contentPane.add(btnNewFile);
 		frame.setSize(100, 100);
-		frame.setLocation(Toolkit.getDefaultToolkit().getWindowSize().width-100, Toolkit.getDefaultToolkit().getWindowSize().height-100);
+		//frame.setLocation(Toolkit.getDefaultToolkit()-100, Toolkit.getDefaultToolkit().getWindowSize().height-100);
+		frame.setLocation(0, 0);
+		System.out.println("mukul");
 		frame.setVisible(true);
 		frame.setAlwaysOnTop(true);
 	}
