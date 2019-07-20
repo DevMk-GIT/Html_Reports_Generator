@@ -43,6 +43,9 @@ public class FileName{
 		lblEnterFileName.setBounds(21, 35, 118, 25);
 		frame.getContentPane().add(lblEnterFileName);
 		
+		
+
+		
 		textField = new JTextField();
 		textField.setBounds(21, 71, 390, 25);
 		frame.getContentPane().add(textField);
