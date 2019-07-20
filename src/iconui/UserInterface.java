@@ -11,6 +11,7 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
@@ -28,7 +29,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.awt.event.ActionEvent;
 
-public class IconForUser{	
+public class UserInterface{	
 	private JPanel contentPane;
 	private FileName file;
 	private JFrame frame;
@@ -41,8 +42,8 @@ public class IconForUser{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					IconForUser icon = new IconForUser();
-					icon.init1();
+					UserInterface ui = new UserInterface();
+					ui.userIcon();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -52,7 +53,7 @@ public class IconForUser{
 	/**
 	 * Create the frame.
 	 */
-	private void init2(){
+	private void screenar(){
 		frame=new JFrame();
 		frame.setUndecorated(true);
         frame.setSize(1367, 770);
@@ -66,7 +67,6 @@ public class IconForUser{
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				try {
-					// TODO Auto-generated method stub
 					System.out.println("Mouse Released: "+e.getX()+"|"+e.getY());
 					String rootpath=System.getProperty("user.home");
 					rootpath+="/ManualReports/"+file.getFileName()+"/Screenshots";
@@ -81,7 +81,7 @@ public class IconForUser{
 					FileGenerator generator=new FileGenerator(file.getFileName());
 					generator.updateDirectry();
 					frame.setVisible(false);
-					init1();
+					userIcon();
 				}catch(Exception e1){
 					e1.printStackTrace();
 				}
@@ -119,11 +119,14 @@ public class IconForUser{
 			}
 		});
 	}
-	private void init1(){
+	private void userIcon(){
 		frame=new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setUndecorated(true);
 		frame.setBounds(100, 100, 450, 300);
+		frame.setSize(100, 100);
+		frame.setLocation(Toolkit.getDefaultToolkit().getScreenSize().width-100,Toolkit.getDefaultToolkit().getScreenSize().height-150);
+		frame.setAlwaysOnTop(true);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		frame.setContentPane(contentPane);
@@ -132,10 +135,10 @@ public class IconForUser{
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(file==null){
-					
+					JOptionPane.showMessageDialog(null, "Select User Story");
 				}else{
 					frame.setVisible(false);
-					init2();
+					userIcon();
 				}
 			}
 		});
@@ -151,11 +154,8 @@ public class IconForUser{
 		});
 		btnNewFile.setBounds(0, 52, 99, 48);
 		contentPane.add(btnNewFile);
-		frame.setSize(100, 100);
-		frame.setLocation(Toolkit.getDefaultToolkit().getScreenSize().width-100,Toolkit.getDefaultToolkit().getScreenSize().height-150);
-
+		
 		frame.setVisible(true);
-		frame.setAlwaysOnTop(true);
 	}
 	public int screenshotNumber(String filename){
 		String rootpath=System.getProperty("user.home");
