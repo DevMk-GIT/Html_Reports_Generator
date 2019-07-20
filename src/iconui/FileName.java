@@ -30,7 +30,7 @@ public class FileName{
 		return filename;
 	}
 	/**
-	 * Initialize the contents of the frame.
+	 * Initialize the contents of the frame.hek
 	 */
 	public void initialize() {
 		frame=new JFrame();
